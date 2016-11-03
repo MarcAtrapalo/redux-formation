@@ -18,4 +18,9 @@ describe('<HeroDetail/>', () => {
         wrapper.find('.hero-edit-name input').should.have.value('Test');
     });
 
+    it('should call onHeroChange when modifying the input', () => {
+        wrapper.find('.hero-edit-name input').simulate('change', {target: {value: 'Batman'}});
+        spy.should.have.been.called;
+    });
+
 });
