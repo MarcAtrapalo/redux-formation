@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const MyHeroDetail = (props) => {
+const HeroDetail = (props) => {
 
     const {hero, onHeroChange} = props;
 
@@ -21,4 +21,4 @@ const MyHeroDetail = (props) => {
     );
 };
 
-export default MyHeroDetail;
+export default HeroDetail;

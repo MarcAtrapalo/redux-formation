@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import MyHeroDetail from './MyHeroDetail';
+import HeroDetail from './HeroDetail';
+import HeroList from './HeroesList';
 
 
 export default class App extends Component {
@@ -41,34 +42,44 @@ export default class App extends Component {
         });
     }
 
-    getHero(id) {
+    onHeroAdd() {
+        const heroes = this.state.heroes;
+        const newId = heroes[heroes.length - 1].id + 1;
+        const newHero = {
+            id: newId,
+            name: ''
+        };
+
+        this.setState({
+            heroes: [...heroes, newHero],
+            selectedHero: newId
+        });
+    }
+
+    getCurrentHero() {
+        const id = this.state.selectedHero;
         let heroes = this.state.heroes;
 
         const hero = heroes.find((hero) => (hero.id === id));
         return hero;
     }
 
-  render() {
+    render() {
+        return (
+            <div>
+                <h1>Tour of Reduced Heroes</h1>
+                <h2>My Heroes</h2>
 
-    return (
-      <div>
-        <h1>Tour of Reduced Heroes</h1>
-        <h2>My Heroes</h2>
+                <HeroList heroes={this.state.heroes}
+                          selectedHero={this.getCurrentHero.call(this)}
+                          onNewHero={this.onHeroAdd.bind(this)}
+                          onSelectHero={this.onHeroChange.bind(this)}
+                ></HeroList>
 
-        <ul className="heroes">
-        {this.state.heroes.map((hero) => (
-          <li key={hero.id} className={(hero == this.state.selectedHero) ? 'selected' : ''}
-          onClick={this.onHeroChange.bind(this, hero.id)}>
-            <span className="badge">{hero.id}</span>{hero.name}
-          </li>
-        ))}
-        </ul>
-          { this.state.selectedHero != null ?
-              (<MyHeroDetail hero={this.getHero(this.state.selectedHero)} onHeroChange={this.onHeroEdit.bind(this)}></MyHeroDetail>)
-              :
-              <div></div>
-          }
-      </div>
-    );
-  }
+                { /* if */ this.state.selectedHero != null &&
+                    <HeroDetail hero={this.getCurrentHero.call(this)} onHeroChange={this.onHeroEdit.bind(this)}></HeroDetail>
+                }
+            </div>
+        );
+    }
 }
