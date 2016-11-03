@@ -35,12 +35,13 @@ npm test
 ```
 
 #### 4. Store
+Install [Redux](https://www.npmjs.com/package/redux).
 Bootstrap the store at the index.js root.
 
 #### 5. Connect
-Connect the existing components to the store with react-redux.
+Connect the existing components to the store with [react-redux](https://www.npmjs.com/package/react-redux).
 
 #### 6. Extra points: API
-Synchronize every change in the heroes with the API mock provided in `src/api/`. Use redux-thunk to implement async action creators.
+Synchronize every change in the heroes with the API mock provided in `src/api/`. Use [redux-thunk](https://www.npmjs.com/package/redux-thunk) to implement async action creators.
 
 Also, show a Loading when adding new heroes and an error message when the API rejects. The API will reject all new heroes with even IDs (divisible by 2). 
