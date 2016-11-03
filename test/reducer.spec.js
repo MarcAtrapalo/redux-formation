@@ -12,7 +12,9 @@ describe('Reducer', () => {
             finalState.idCounter.should.equal(initialState.idCounter + 1);
         });
 
-        it('should add a new hero to the list');
+        it('should add a new hero to the list', () => {
+
+        });
 
         it('should add a hero that has the previous idCounter as id');
 

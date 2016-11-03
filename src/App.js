@@ -27,8 +27,6 @@ export default class App extends Component {
         this.setState({
             selectedHero: id
         });
-
-        console.log(id);
     }
 
     onHeroEdit(id, name) {

@@ -5,7 +5,6 @@ const HeroDetail = (props) => {
     const {hero, onHeroChange} = props;
 
     const onHeroEdit = (event) => {
-        console.log("hola");
         onHeroChange(hero.id, event.target.value);
     };
 
