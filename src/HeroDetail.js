@@ -12,10 +12,10 @@ const HeroDetail = (props) => {
     return(
         <div>
             <h2>{hero.name} details!</h2>
-            <div><label>id: </label>{hero.id}</div>
-            <div>
+            <div className="hero-edit-id"><label>id: </label>{hero.id}</div>
+            <div className="hero-edit-name">
                 <label>name: </label>
-                <input onChange={onHeroEdit.bind(this)} placeholder="name"/>
+                <input value={hero.name} onChange={onHeroEdit.bind(this)} placeholder="name"/>
               </div>
         </div>
     );

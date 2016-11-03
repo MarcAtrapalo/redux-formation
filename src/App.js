@@ -32,13 +32,12 @@ export default class App extends Component {
     }
 
     onHeroEdit(id, name) {
-
         let heroes = [...this.state.heroes];
 
-        heroes.splice(heroes.indexOf(heroes.find((hero) => (hero.id === id))), 1);
+        heroes.splice(heroes.indexOf(heroes.find((hero) => (hero.id === id))), 1, {id, name});
 
         this.setState({
-            heroes: [...heroes, {id, name}]
+            heroes
         });
     }
 
