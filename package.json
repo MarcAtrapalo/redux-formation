@@ -1,7 +1,7 @@
 {
-  "name": "react-hot-boilerplate",
+  "name": "redux-formation",
   "version": "1.0.0",
-  "description": "Boilerplate for ReactJS project with hot code reloading",
+  "description": "",
   "scripts": {
     "start": "node server.js",
     "lint": "eslint src",
@@ -22,7 +22,7 @@
     "edit",
     "webpack"
   ],
-  "author": "Dan Abramov <dan.abramov@me.com> (http://github.com/gaearon)",
+  "author": "Marc Rodríguez",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/gaearon/react-hot-boilerplate/issues"
