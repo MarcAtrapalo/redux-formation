@@ -74,7 +74,7 @@ export default class App extends Component {
                 ></HeroList>
 
                 { /* if */ this.state.selectedHero != null &&
-                    <HeroDetail hero={this.getCurrentHero.call(this)} onHeroChange={this.onHeroEdit.bind(this)}></HeroDetail>
+                    <HeroDetail hero={this.getCurrentHero()} onHeroChange={this.onHeroEdit.bind(this)}></HeroDetail>
                 }
             </div>
         );

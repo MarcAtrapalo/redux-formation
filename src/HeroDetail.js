@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import ChangeHeroName from './actions/ChangeHeroName.action';
 
-const HeroDetail = (props) => {
+export const HeroDetail = (props) => {
 
     const {hero, onHeroChange} = props;
 
@@ -19,5 +21,15 @@ const HeroDetail = (props) => {
         </div>
     );
 };
+
+// const mapStateToProps = (state) => ({
+//     hero: state.heroes[state.selectedHero]
+// });
+//
+// export const mapDispatchToProps = (dispatch) => ({
+//     onHeroChange: (heroId, heroName) => {dispatch(ChangeHeroName(heroId, heroName))}
+// });
+//
+// const DecoratedHeroDetail = connect(mapStateToProps, mapDispatchToProps)(HeroDetail);
 
 export default HeroDetail;

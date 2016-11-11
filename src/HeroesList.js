@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Hero from './Hero';
 
 
 export default class App extends Component {
@@ -14,12 +15,14 @@ export default class App extends Component {
             <ul className="heroes">
 
                 {heroes.map((hero) => (
-                    <li key={hero.id}
-                        className={(hero.id == selectedHero) ? 'selected' : ''}
-                        onClick={ (e) => {onSelectHero(hero.id)} }
+                    <Hero
+                        key={hero.id}
+                        id={hero.id}
+                        name={hero.name}
+                        isSelected={hero.id === selectedHero}
+                        onSelectHero={onSelectHero}
                     >
-                        <span className="badge">{hero.id}</span>{hero.name}
-                    </li>
+                    </Hero>
                 ))}
 
                 <li onClick={onNewHero}>
