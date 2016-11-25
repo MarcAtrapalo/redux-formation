@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import HeroDetail from './HeroDetail';
-import HeroList from './HeroesList';
+import List from './List';
+import Hero from './Hero';
 
 
 export default class App extends Component {
@@ -67,11 +68,18 @@ export default class App extends Component {
                 <h1>Tour of Reduced Heroes</h1>
                 <h2>My Heroes</h2>
 
-                <HeroList heroes={this.state.heroes}
-                          selectedHero={this.getCurrentHero.call(this)}
-                          onNewHero={this.onHeroAdd.bind(this)}
-                          onSelectHero={this.onHeroChange.bind(this)}
-                ></HeroList>
+                <List items={this.state.heroes}
+                          ItemComponent={Hero}
+                          selectedItem={this.getCurrentHero.call(this)}
+                          onSelect={this.onHeroChange.bind(this)}
+                >
+                </List>
+
+                <ul>
+                    <li onClick={this.onHeroAdd.bind(this)}>
+                        <span className="badge">+</span><strong>New Hero</strong>
+                    </li>
+                </ul>
 
                 { /* if */ this.state.selectedHero != null &&
                     <HeroDetail hero={this.getCurrentHero()} onHeroChange={this.onHeroEdit.bind(this)}></HeroDetail>
